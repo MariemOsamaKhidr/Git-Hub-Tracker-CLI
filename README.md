@@ -14,5 +14,5 @@ A simple command-line tool built in C# that fetches and displays a GitHub user's
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<MariemOsamaKhidr \>/GitHubActivityCLI.git
+   git clone https://github.com/MariemOsamaKhidr/GitHubActivityCLI.git
    cd GitHubActivityCLI
