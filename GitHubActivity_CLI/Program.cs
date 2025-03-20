@@ -72,25 +72,16 @@ namespace GitHubActivity_CLI
         static async Task<List<GitHubEvent>> FetchUserEventsAsync(string username)
         {
             string url = $"https://api.github.com/users/{username}/events";
-            //Console.WriteLine($"Fetching from: {url}");
-
             HttpResponseMessage response = await client.GetAsync(url);
-           // Console.WriteLine($"Status Code: {response.StatusCode}");
-
             if (!response.IsSuccessStatusCode)
             {
                 throw new HttpRequestException($"API request failed with status {response.StatusCode}");
             }
-
             string json = await response.Content.ReadAsStringAsync();
-            //Console.WriteLine($"Raw JSON length: {json.Length}");
-            //Console.WriteLine($"Raw JSON snippet: {json.Substring(0, Math.Min(100, json.Length))}...");
-
             if (string.IsNullOrEmpty(json) || json == "[]")
             {
                 return new List<GitHubEvent>();
             }
-
             try
             {
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
