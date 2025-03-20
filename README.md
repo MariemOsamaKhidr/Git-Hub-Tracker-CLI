@@ -16,3 +16,4 @@ A simple command-line tool built in C# that fetches and displays a GitHub user's
    ```bash
    git clone https://github.com/MariemOsamaKhidr/GitHubActivityCLI.git
    cd GitHubActivityCLI
+Project : https://roadmap.sh/projects/github-user-activity
